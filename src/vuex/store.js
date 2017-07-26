@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import actions from './actions'
+import * as actions from './actions/index'
+console.log(actions,'actions=============')
 
 // modules 模块分类
 import tags from './modules/tags'
