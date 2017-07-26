@@ -6,7 +6,7 @@
         <div><input type='text' v-model='arr.one' /></div>
         <div ref='eldata' @click='refget()'>{{arr.one}}</div>
         <router-link :to="{ name: 'test'}">测试</router-link>
-        <div>{{tagContents}}</div>
+        <div @click='dispatchThing()'>{{tagContents}}</div>
     </div>
 </template>
 <script>
@@ -54,6 +54,9 @@
             },
             refget: function() {
                 console.log(this.$refs.eldata, 'get el ment')
+            },
+            dispatchThing:function(){
+                this.$store.dispatch('getContentList')
             }
         },
         computed: {
