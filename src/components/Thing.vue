@@ -7,6 +7,8 @@
         <div ref='eldata' @click='refget()'>{{arr.one}}</div>
         <router-link :to="{ name: 'test'}">测试</router-link>
         <div @click='dispatchThing()'>{{tagContents}}</div>
+        <div>{{dataTwo}}</div>
+        <div><button @click='changeDataTwo()'>change datatwo</button></div>
     </div>
 </template>
 <script>
@@ -56,7 +58,10 @@
                 console.log(this.$refs.eldata, 'get el ment')
             },
             dispatchThing:function(){
-                this.$store.dispatch('getContentList')
+                this.$store.dispatch('getContentList',88888888888888888)
+            },
+            changeDataTwo:function(){
+                 this.$store.dispatch('changeDataTwo','datatwochanged')
             }
         },
         computed: {
@@ -66,6 +71,9 @@
             tagContents:function() {
                 console.log(this.$store.state,'test get state')
                 return this.$store.state.tags.tagList
+            },
+            dataTwo:function(){
+                return this.$store.state.tags.dataTwo
             }
         },
     }
