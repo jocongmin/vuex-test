@@ -1,3 +1,4 @@
-import * as tags from './tags'
-console.log(tags,'tags')
-export default tags;
+import {getContentList,changeDataTwo} from './tags'
+export default {
+    getContentList,changeDataTwo
+};

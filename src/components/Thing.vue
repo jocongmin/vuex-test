@@ -9,6 +9,7 @@
         <div @click='dispatchThing()'>{{tagContents}}</div>
         <div>{{dataTwo}}</div>
         <div><button @click='changeDataTwo()'>change datatwo</button></div>
+        <div><router-link :to="{ name: 'test'}">测试</router-link></div>
     </div>
 </template>
 <script>

@@ -4,6 +4,7 @@
         <Mytest abc='this is props' abd='this is props abd'>
             <div>this is slot</div>
         </Mytest>
+        <div>{{getTagList}}</div>
     </div>
 </template>
 <script>
@@ -21,6 +22,11 @@
         methods: {
             greet: function(event) {
                 alert('hello test')
+            }
+        },
+        computed:{
+            getTagList:function(){
+                return this.$store.state.tags.tagList;  //when the data change in vuex by other page , here it also will change
             }
         }
     }
