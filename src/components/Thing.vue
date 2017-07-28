@@ -10,6 +10,7 @@
         <div>{{dataTwo}}</div>
         <div><button @click='changeDataTwo()'>change datatwo</button></div>
         <div><router-link :to="{ name: 'test'}">测试</router-link></div>
+        <div><router-link :to="{ name: 'test',  query: { plan: 'private' }}">测试p</router-link></div>
     </div>
 </template>
 <script>
