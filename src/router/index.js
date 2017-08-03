@@ -11,17 +11,23 @@ export default new Router({
     {
       path: '/',
       name: 'Test',
-      component: Test
+      component: (resolve)=>{
+        require(['@/components/Test'],resolve);
+      }
     },
     {
       path: '/hello',
       name: 'Hello',
-      component: Hello
+      component: (resolve)=>{
+        require(['@/components/Hello'],resolve);
+      }
     },
     {
       path: '/thing',
       name: 'Thing',
-      component: Thing
+      component: (resolve)=>{
+        require(['@/components/Thing'],resolve);
+      }
     }
   ]
 })
