@@ -8,6 +8,8 @@
         <div><span :class="{'blue':true}">dkfdkfjdkj</span></div>
         <div><span :class="{'red':true}">dkfdkfjdkj</span></div>
         <div><span :class="classA ? 'red' : 'blue' ">dkfdkfjdkj</span></div>
+        <div class='childClass'><span>时刻记得发</span></div>
+        <div><span v-for="(item,index) in dataArr">{{item}},{{index}}<br/></span></div>
     </div>
 </template>
 <script>
@@ -18,6 +20,7 @@
             return {
                 msg: 'jocm app',
                 classA:false,
+                dataArr:[12,13,15,165,18]
             }
         },
         components: {
@@ -45,5 +48,10 @@
     }
     .blue {
         color: blue;
+    }
+    .childClass{
+        span{
+            color:red;
+        }
     }
 </style>
