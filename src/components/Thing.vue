@@ -64,7 +64,7 @@
             },
             changeDataTwo:function(){
                  this.$store.dispatch('changeDataTwo','datatwochanged')
-            }
+            },
         },
         computed: {
             testcm: function() {
