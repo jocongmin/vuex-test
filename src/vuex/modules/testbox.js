@@ -4,7 +4,8 @@ import { GET_DATA_FOR_TESTBOX, GET_ARR_DATA, GET_DATA_FROM_API } from '../mutati
 const state = {
     data: 1,
     testArr: [],
-    apiData: {}
+    apiData: {},
+    apiData2: {}
 }
 
 const mutations = {
@@ -21,6 +22,9 @@ const mutations = {
     },
     [GET_DATA_FROM_API](state, params) {
         state.apiData = params;
+    },
+    [GET_DATA_FROM_API](state, params) {
+        state.apiData2 = params;
     },
 }
 

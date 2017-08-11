@@ -9,6 +9,8 @@
             <div><button @click="getDataFromApi()">get data from api</button></div>
             <div v-if="apiData.data!=undefined"><span class='mar' v-for="(item,index) in apiData.data" :key="index">{{item.name}}</span></div>
             <div v-else>loading</div>
+            <div @click="getDataTwo()">get data two</div>
+            <div>{{dataTwo}}</div>
         </div>
     </div>
 </template>
@@ -61,6 +63,9 @@
             },
             getDataFromApi:function(){
                 this.$store.dispatch('getDataFromApi',null)
+            },
+            getDataTwo:function(){
+                this.$store.dispatch("getDataTwo",null);
             }
         },
         computed: {
@@ -72,6 +77,9 @@
             },
             apiData:function(){
                 return this.$store.state.testbox.apiData;
+            },
+            dataTwo:function(){
+                return this.$store.state.testbox.apiData2;
             }
         }
     }
