@@ -32,6 +32,13 @@ export default new Router({
             component: (resolve) => {
                 require(['@/components/Slider'], resolve);
             }
+        },
+        {
+            path: '/testbox',
+            name: 'testbox',
+            component: (resolve) => {
+                require(['@/components/Testbox'], resolve);
+            }
         }
     ]
 })

@@ -1,4 +1,7 @@
-import {getContentList,changeDataTwo} from './tags'
+import { getContentList, changeDataTwo } from './tags'
+import { getDataforTestBox } from "./testbox"
 export default {
-    getContentList,changeDataTwo
+    getContentList,
+    changeDataTwo,
+    getDataforTestBox
 };
