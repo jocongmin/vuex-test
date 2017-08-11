@@ -18,7 +18,7 @@
             <span>时刻记得发</span>
         </div>
         <div>
-            <span v-for="(item,index) in dataArr">{{item}},{{index}}
+            <span v-for="(item,index) in dataArr" :key="index">{{item}},{{index}}
                 <br/>
             </span>
         </div>

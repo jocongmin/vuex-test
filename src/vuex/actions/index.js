@@ -1,7 +1,8 @@
 import { getContentList, changeDataTwo } from './tags'
-import { getDataforTestBox } from "./testbox"
+import { getDataforTestBox, getArrData } from "./testbox"
 export default {
     getContentList,
     changeDataTwo,
-    getDataforTestBox
+    getDataforTestBox,
+    getArrData
 };
