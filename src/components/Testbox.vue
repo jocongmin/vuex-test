@@ -6,6 +6,9 @@
             <div>
                 <span class="mar" v-for="(item,index) in testArrData" :key="index">{{item}}</span>
             </div>
+            <div><button @click="getDataFromApi()">get data from api</button></div>
+            <div v-if="apiData.data!=undefined">{{apiData.data[0].name}}</div>
+            <div v-else>loading</div>
         </div>
     </div>
 </template>
@@ -30,7 +33,9 @@
             console.log("mount之前", 'beforeMount')
         },
         mounted: function() {
-            console.log("mount之后", 'mounted')
+            console.dir(this.$http,'http');
+            console.log("mount之后", 'mounted');
+             console.log(this.apiData.data,'apidata')
         },
         beforeUpdate: function() {
             console.log(this.testArrData,'testArrData-beforeUpdate');//当state数据更新的时候会触发这个周期
@@ -39,6 +44,7 @@
         updated: function() { //当state数据更新的时候会触发这个周期
             console.log(this.testArrData,'testArrData-updated')
             console.log("更新完成", 'updated');
+            console.log(this.apiData.data,'apidata')
         },
         beforeDestroy: function() {
             console.log("销毁前", 'beforeDestroy');
@@ -51,6 +57,10 @@
                 console.log('start')
                 this.$store.dispatch("getDataforTestBox", 15); //触发storeaction的方法
                 this.$store.dispatch('getArrData', null);
+
+            },
+            getDataFromApi:function(){
+                this.$store.dispatch('getDataFromApi',null)
             }
         },
         computed: {
@@ -59,6 +69,9 @@
             },
             testArrData: function() {
                 return this.$store.state.testbox.testArr;
+            },
+            apiData:function(){
+                return this.$store.state.testbox.apiData;
             }
         }
     }

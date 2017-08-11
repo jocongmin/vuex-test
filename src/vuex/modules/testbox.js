@@ -1,8 +1,10 @@
-import { GET_DATA_FOR_TESTBOX, GET_ARR_DATA } from '../mutation-types'
+import Vue from "vue";
+import { GET_DATA_FOR_TESTBOX, GET_ARR_DATA, GET_DATA_FROM_API } from '../mutation-types'
 
 const state = {
     data: 1,
-    testArr: []
+    testArr: [],
+    apiData: {}
 }
 
 const mutations = {
@@ -16,6 +18,9 @@ const mutations = {
             arr.push(i)
         }
         state.testArr = arr;
+    },
+    [GET_DATA_FROM_API](state, params) {
+        state.apiData = params;
     },
 }
 
