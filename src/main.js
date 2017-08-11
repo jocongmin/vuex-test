@@ -4,13 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex/store';
-Vue.config.productionTip = false
-
-/* eslint-disable no-new */
+Vue.config.productionTip = false;
+import vueTap from 'v-tap';
+Vue.use(vueTap);
 new Vue({
-  el: '#app',
-  router,
-  store,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    store,
+    template: '<App/>',
+    components: { App }
 })
