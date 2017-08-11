@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { GET_DATA_FOR_TESTBOX, GET_ARR_DATA, GET_DATA_FROM_API } from '../mutation-types'
+import { SET_DATA_FOR_TESTBOX, SET_ARR_DATA, SET_DATA_FROM_API, SET_DATA_FROM_DATA_TWO } from '../mutation-types'
 
 const state = {
     data: 1,
@@ -9,21 +9,21 @@ const state = {
 }
 
 const mutations = {
-    [GET_DATA_FOR_TESTBOX](state, params) {
+    [SET_DATA_FOR_TESTBOX](state, params) {
         var rd = Math.random() * 100;
         state.data = params * rd;
     },
-    [GET_ARR_DATA](state, params) {
+    [SET_ARR_DATA](state, params) {
         var arr = []
         for (var i = 0; i < 100; i++) {
             arr.push(i)
         }
         state.testArr = arr;
     },
-    [GET_DATA_FROM_API](state, params) {
+    [SET_DATA_FROM_API](state, params) {
         state.apiData = params;
     },
-    [GET_DATA_FROM_API](state, params) {
+    [SET_DATA_FROM_DATA_TWO](state, params) {
         state.apiData2 = params;
     },
 }

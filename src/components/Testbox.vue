@@ -9,8 +9,11 @@
             <div><button @click="getDataFromApi()">get data from api</button></div>
             <div v-if="apiData.data!=undefined"><span class='mar' v-for="(item,index) in apiData.data" :key="index">{{item.name}}</span></div>
             <div v-else>loading</div>
-            <div @click="getDataTwo()">get data two</div>
-            <div>{{dataTwo}}</div>
+            <div @click="getDataTwo()"><button>get data two</button></div>
+            <div>
+                <div v-if="dataTwo.data!=undefined">{{dataTwo.data[0].xingmin}}</div>
+                <div v-else>loading2</div>
+            </div>
         </div>
     </div>
 </template>
@@ -35,18 +38,18 @@
             console.log("mount之前", 'beforeMount')
         },
         mounted: function() {
-            console.dir(this.$http,'http');
+            console.dir(this.$http, 'http');
             console.log("mount之后", 'mounted');
-             console.log(this.apiData.data,'apidata')
+            console.log(this.apiData.data, 'apidata')
         },
         beforeUpdate: function() {
-            console.log(this.testArrData,'testArrData-beforeUpdate');//当state数据更新的时候会触发这个周期
+            console.log(this.testArrData, 'testArrData-beforeUpdate'); //当state数据更新的时候会触发这个周期
             console.log("更新前", 'beforeUpdate');
         },
         updated: function() { //当state数据更新的时候会触发这个周期
-            console.log(this.testArrData,'testArrData-updated')
+            console.log(this.testArrData, 'testArrData-updated')
             console.log("更新完成", 'updated');
-            console.log(this.apiData.data,'apidata')
+            console.log(this.apiData.data, 'apidata')
         },
         beforeDestroy: function() {
             console.log("销毁前", 'beforeDestroy');
@@ -59,13 +62,12 @@
                 console.log('start')
                 this.$store.dispatch("getDataforTestBox", 15); //触发storeaction的方法
                 this.$store.dispatch('getArrData', null);
-
             },
-            getDataFromApi:function(){
-                this.$store.dispatch('getDataFromApi',null)
+            getDataFromApi: function() {
+                this.$store.dispatch('getDataFromApi', null)
             },
-            getDataTwo:function(){
-                this.$store.dispatch("getDataTwo",null);
+            getDataTwo: function() {
+                this.$store.dispatch("getDataTwo", null);
             }
         },
         computed: {
@@ -75,10 +77,10 @@
             testArrData: function() {
                 return this.$store.state.testbox.testArr;
             },
-            apiData:function(){
+            apiData: function() {
                 return this.$store.state.testbox.apiData;
             },
-            dataTwo:function(){
+            dataTwo: function() {
                 return this.$store.state.testbox.apiData2;
             }
         }
