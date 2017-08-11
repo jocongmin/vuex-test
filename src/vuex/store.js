@@ -7,6 +7,7 @@ console.log(actions, 'actions=============')
 // modules 模块分类
 import tags from './modules/tags'
 import testbox from "./modules/testbox"
+import request from "./modules/request"
 
 Vue.use(Vuex)
 
@@ -19,6 +20,7 @@ export default new Vuex.Store({
     actions,
     modules: {
         tags,
-        testbox
+        testbox,
+        request
     }
 })

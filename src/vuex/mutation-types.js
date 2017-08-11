@@ -3,3 +3,4 @@ export const CHANGE_DATA_TWO = 'CHANGE_DATA_TWO'
 export const GET_DATA_FOR_TESTBOX = 'GET_DATA_FOR_TESTBOX'
 export const GET_ARR_DATA = 'GET_ARR_DATA'
 export const GET_DATA_FROM_API = "GET_DATA_FROM_API"
+export const SET_REQ_STATE = "SET_REQ_STATE"

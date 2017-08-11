@@ -7,7 +7,7 @@
                 <span class="mar" v-for="(item,index) in testArrData" :key="index">{{item}}</span>
             </div>
             <div><button @click="getDataFromApi()">get data from api</button></div>
-            <div v-if="apiData.data!=undefined">{{apiData.data[0].name}}</div>
+            <div v-if="apiData.data!=undefined"><span class='mar' v-for="(item,index) in apiData.data" :key="index">{{item.name}}</span></div>
             <div v-else>loading</div>
         </div>
     </div>

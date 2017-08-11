@@ -5,5 +5,5 @@ export default {
     changeDataTwo,
     getDataforTestBox,
     getArrData,
-    getDataFromApi
+    getDataFromApi,
 };
