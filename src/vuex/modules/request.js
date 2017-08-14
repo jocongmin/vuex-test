@@ -9,6 +9,10 @@ const mutations = {
     }
 }
 
+export const reqState = state;
+export const reqMutations = mutations;
+
+
 export default {
     state,
     mutations
