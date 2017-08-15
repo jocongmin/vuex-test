@@ -23,6 +23,16 @@
             <div>
                 <button @click="loadAgain()">load again</button>
             </div>
+            <div>
+                <div>{{this.testObj.one}}</div>
+                <button @click="changeChild()">change child</button>
+            </div>
+            <div>
+                <div v-for="(item,index) in tcArr">{{item}}</div>
+                <button @click="changeArr()">change arr</button>
+            </div>
+            <div v-if="this.tcData.one!=undefined">{{this.tcData.one}}</div>
+            <div v-if="this.tcData.two!=undefined">{{this.tcData.two}}</div>
         </div>
     </div>
 </template>
@@ -36,7 +46,15 @@ export default {
     props: [],
     data() {
         return {
-            msg: 'this is components'
+            msg: 'this is components',
+            testObj:{
+                one:6,
+                two:8
+            },
+            tcArr:[{"one":"skldjflksdjlfk"},{"two":"slkdfjsldkjflskdjf"}],
+            tcData:{
+                "one":"sdlkjflskdjflksjd"
+            }
         }
     },
     beforeCreate: function () {
@@ -83,7 +101,16 @@ export default {
         loadAgain: function () {
             this.$store.dispatch("setReqState",{ name: GET_DATA_FROM_DATA_TWO, reqIs: false });
             //可以重新继续请求数据
-        }
+        },
+        changeChild:function(){
+            this.testObj.one=55555555;
+           // this.$set(this.testObj,'one',8888888888);
+            console.log(this.testObj,'testobj')
+        },
+        changeArr:function(){
+            this.tcArr[0].one=4646446;
+           // this.$set(this.tcArr[0],'one',46464654)
+        },
     },
     computed: {
         testboxdata: function () { //获取store的数据
